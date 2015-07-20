@@ -56,7 +56,18 @@
 ;;; Functions ;;;
 
 ;; <<< BEGIN FILL ME IN >>>
+(defn upper-case [{:keys [name]}]
+  {:name (clojure.string/upper-case name)})
 
+(defn interpose-pipe [{:keys [name]}]
+  {:name (->> name
+           (interpose '|)
+           (apply str))})
+
+(defn interpose-space [{:keys [name]}]
+  {:name (->> name
+           (interpose \space)
+           (apply str))})
 ;; <<< END FILL ME IN >>>
 
 ;;; Lifecycles ;;;

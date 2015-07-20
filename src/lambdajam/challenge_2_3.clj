@@ -22,7 +22,15 @@
        :onyx/doc "Reads segments from a core.async channel"}
 
       ;; <<< BEGIN FILL ME IN >>>
-
+      {:onyx/name :identity
+       :onyx/fn :lambdajam.challenge-2-3/identity
+       :onyx/type :function
+       :onyx/group-by-key :user-id
+       :onyx/flux-policy :continue
+       :onyx/min-peers 2
+       :onyx/batch-size batch-size
+       :onyx/batch-timeout batch-timeout
+       :onyx/doc "Leaves input untouched"}
       ;; <<< END FILL ME IN >>>
 
       {:onyx/name :write-segments
