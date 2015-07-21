@@ -22,7 +22,12 @@
        :onyx/doc "Reads segments from a core.async channel"}
 
       ;; <<< BEGIN FILL ME IN PART 1 >>>
-
+      {:onyx/name :transform-name
+       :onyx/fn :lambdajam.challenge-3-3/transform-name
+       :onyx/type :function
+       :onyx/batch-size batch-size
+       :onyx/batch-timeout batch-timeout
+       :onyx/doc "Prepends input with tilde and appends it with a question mark"}
       ;; <<< END FILL ME IN PART 1 >>>
 
       {:onyx/name :write-segments
@@ -37,7 +42,11 @@
 ;;; Functions ;;;
 
 ;; <<< BEGIN FILL ME IN PART 2 >>>
-
+(defn transform-name [segment]
+  (update-in segment [:name] (fn [s] (as-> s $
+                                       (concat "~" $)
+                                       (concat $ "?")
+                                       (apply str $)))))
 ;; <<< END FILL ME IN  PART 2 >>>
 
 ;;; Lifecycles ;;;

@@ -40,9 +40,9 @@
 ;;; Functions ;;;
 
 ;; <<< BEGIN FILL ME IN >>>
-
-
-
+(defn split-sentence [{:keys [sentence]}]
+  (for [word (clojure.string/split sentence #" ")]
+    {:word word}))
 ;; <<< END FILL ME IN >>>
 
 ;;; Lifecycles ;;;
