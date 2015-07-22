@@ -22,7 +22,13 @@
        :onyx/doc "Reads segments from a core.async channel"}
 
       ;; <<< BEGIN FILL ME IN PART 1 >>>
-
+      {:onyx/name :echo-segments
+       :onyx/fn :lambdajam.challenge-3-4/echo-segments
+       :onyx/type :function
+       :onyx/bulk? true
+       :onyx/batch-size batch-size
+       :onyx/batch-timeout batch-timeout
+       :onyx/doc "Prints segments"}
       ;; <<< END FILL ME IN PART 1 >>>
 
       {:onyx/name :write-segments
@@ -37,7 +43,11 @@
 ;;; Functions ;;;
 
 ;; <<< BEGIN FILL ME IN PART 1 >>>
-
+(defn echo-segments [segments]
+  (println "Segments!!11!1! " segments)
+  ;; This would normally cause the next step to fail since it's
+  ;; not a map but it's entirely ignored.
+  42)
 ;; <<< END FILL ME IN PART 2 >>>
 
 ;;; Lifecycles ;;;
